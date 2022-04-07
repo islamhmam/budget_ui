@@ -27,13 +27,13 @@ class RadialPainter extends CustomPainter {
       ..strokeCap = StrokeCap.round
       ..style = PaintingStyle.stroke
       ..strokeWidth = width!;
-    Offset center = Offset(size.height / 2, size.width / 2);
-    double radius = min(size.height / 2, size.width / 2);
+    Offset center = Offset(size.width / 2, size.height / 2);
+    double radius = min(size.height / 3, size.width / 3);
     canvas.drawCircle(center, radius, pgLine);
     canvas.drawArc(
       Rect.fromCircle(center: center, radius: radius),
       -pi/2,
-      pi/2,
+      2*pi*percent!,
       false,
         completeLine,
     );
